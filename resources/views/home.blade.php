@@ -9,9 +9,15 @@
 </head>
 <body>
     <h1>Memo</h1>
-    <form action="">
+    <form action="/add" method="post">
+    @csrf
         <input type="text" name="memo">
         <input type="submit" value="Add">
     </form>
+    <div class="content">
+        @foreach ($posts as $post)
+        <p>{{$post->id}}</p>
+        @endforeach
+    </div>
 </body>
 </html>
