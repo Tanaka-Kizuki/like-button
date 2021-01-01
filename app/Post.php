@@ -9,4 +9,8 @@ class Post extends Model
     protected $fillable = [
         'memo',
     ];
+
+    public function likes() {
+        return $this->hasMany('App\Like');
+    }
 }
