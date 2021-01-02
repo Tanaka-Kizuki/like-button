@@ -6,6 +6,7 @@
     <title>Document</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <h1>Memo</h1>
@@ -19,5 +20,9 @@
         <p>{{$post->id}}</p>
         @endforeach
     </div>
+    <div id="app">
+        <example-component></example-component>
+    </div>
+    <script src="{{mix('js/app.js')}}"></script>
 </body>
 </html>
