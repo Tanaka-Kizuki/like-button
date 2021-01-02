@@ -1,6 +1,6 @@
 <template>
  <div>
-1  <button v-if="status == false" type="button" @click.prevent="like" class="btn btn-outline-warning">Like</button>
+  <button v-if="status == false" type="button" @click.prevent="like" class="btn btn-outline-warning">Like</button>
    <button v-else type="button" @click.prevent="like" class="btn btn-warning">Liked</button>
  </div>
 </template>
@@ -14,7 +14,7 @@ export default {
    }
  },
  created() {
-   this.like_check()      2
+   this.like_check()
  },
  methods: {
    like_check() {
@@ -31,7 +31,7 @@ export default {
        console.log(err)
      })
    },
-   like() {                         3
+   like() {
      const id = this.item_id
      const array = ["/items/",id,"/likes"];
      const path = array.join('')
