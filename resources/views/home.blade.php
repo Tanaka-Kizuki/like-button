@@ -15,13 +15,14 @@
         <input type="text" name="memo">
         <input type="submit" value="Add">
     </form>
-    <div class="content">
+    <div class="content" id="app">
         @foreach ($posts as $post)
-        <p>{{$post->id}}</p>
+        <div>
+            <p>{{$post->id}}</p>
+            <p>{{$post->memo}}</p>
+            <like-component :item_id="{{$post->id}}"></like-component>
+        </div>
         @endforeach
-    </div>
-    <div id="app">
-        <example-component></example-component>
     </div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>

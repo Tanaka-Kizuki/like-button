@@ -33,12 +33,13 @@ export default {
    },
    like() {
      const id = this.item_id
-     const array = ["/items/",id,"/likes"];
+     const array = ["/posts/",id,"/likes"];
      const path = array.join('')
      axios.post(path).then(res => {
-       this.like_check()
+          console.log(id)
+          this.like_check()
      }).catch(function(err) {
-       console.log(err)
+          console.log(err)
      })
    }
  }

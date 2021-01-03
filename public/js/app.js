@@ -1982,6 +1982,8 @@ __webpack_require__.r(__webpack_exports__);
       var array = ["/items/", id, "/likes"];
       var path = array.join('');
       axios.post(path).then(function (res) {
+        console.log(id);
+
         _this2.like_check();
       })["catch"](function (err) {
         console.log(err);
