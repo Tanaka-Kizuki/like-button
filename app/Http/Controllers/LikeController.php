@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Post;
+use App\Post;
+use App\Like;
 
 class LikeController extends Controller
 {
-    public function check() {
-         if()
-         return $data;
+    public function check($post) {
+     $like = Like::where('posts_id',$post)->first();
+     if($like->like == 1) {
+          $like->like = 0;
+          $like->save();
+          return $like->like;
+     } else {
+          $like->like = 1;
+          $like->save();
+          return $like->like;
+     };
     }
 
-    public function store(Post $post)
-   {
+    public function store(Post $post) {
      $user = Auth::user();
      if($user->id != $post->user_id) {
           if($post->isLiked(Auth::id())) {

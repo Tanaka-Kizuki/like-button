@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/posts/{item}/check', 'LikeController@check')->name('like.check');
+Route::get('/posts/{post?}/check', 'LikeController@check')->name('like.check');
 Route::resource('posts.likes', 'LikeController', [
      'only' => ['store'],
 ]);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Like;
 
 class PostController extends Controller
 {
@@ -17,6 +18,11 @@ class PostController extends Controller
         unset($data['_token']);
         $post = new Post;
         $post->fill($data)->save();
+        $posts = Post::orderby('id','desc')->first();
+        $like = Like::create([
+            'posts_id' => $posts->id
+        ]);
+        $like->save();
         return redirect('/');
     }
 }

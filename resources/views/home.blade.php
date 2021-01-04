@@ -20,7 +20,7 @@
         <div>
             <p>{{$post->id}}</p>
             <p>{{$post->memo}}</p>
-            <like-component :item_id="{{$post->id}}"></like-component>
+            <like-component :post_id="{{$post->id}}"></like-component>
         </div>
         @endforeach
     </div>
