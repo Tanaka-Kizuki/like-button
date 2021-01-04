@@ -19,9 +19,10 @@ export default {
  methods: {
    like_check() {
      const id = this.item_id
-     const array = ["/items/",id,"/check"];
+     const array = ["/posts/",id,"/check"];
      const path = array.join('')
      axios.get(path).then(res => {
+          console.log(res);
        if(res.data == 1) {
          this.status = true
        } else {
@@ -36,7 +37,6 @@ export default {
      const array = ["/posts/",id,"/likes"];
      const path = array.join('')
      axios.post(path).then(res => {
-          console.log(id)
           this.like_check()
      }).catch(function(err) {
           console.log(err)

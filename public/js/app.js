@@ -1963,9 +1963,11 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var id = this.item_id;
-      var array = ["/items/", id, "/check"];
+      var array = ["/posts/", id, "/check"];
       var path = array.join('');
       axios.get(path).then(function (res) {
+        console.log(res);
+
         if (res.data == 1) {
           _this.status = true;
         } else {
@@ -1979,11 +1981,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var id = this.item_id;
-      var array = ["/items/", id, "/likes"];
+      var array = ["/posts/", id, "/likes"];
       var path = array.join('');
       axios.post(path).then(function (res) {
-        console.log(id);
-
         _this2.like_check();
       })["catch"](function (err) {
         console.log(err);
