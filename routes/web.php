@@ -20,3 +20,7 @@ Route::resource('posts.likes', 'LikeController', [
 ]);
 Route::get('/','PostController@index');
 Route::post('/add','PostController@create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
