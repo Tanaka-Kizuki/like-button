@@ -1956,22 +1956,36 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.like_check();
+    this.first_check();
   },
   methods: {
-    like_check: function like_check() {
+    first_check: function first_check() {
       var _this = this;
+
+      var id = this.post_id;
+      var array = ["/posts/", id, "/firstcheck"];
+      var path = array.join('');
+      axios.get(path).then(function (res) {
+        if (res.data == 1) {
+          _this.status = true;
+        } else {
+          _this.status = false;
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    like_check: function like_check() {
+      var _this2 = this;
 
       var id = this.post_id;
       var array = ["/posts/", id, "/check"];
       var path = array.join('');
       axios.get(path).then(function (res) {
-        console.log(res);
-
         if (res.data == 1) {
-          _this.status = true;
+          _this2.status = true;
         } else {
-          _this.status = false;
+          _this2.status = false;
         }
       })["catch"](function (err) {
         console.log(err);

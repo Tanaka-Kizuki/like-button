@@ -8,6 +8,11 @@ use App\Like;
 
 class LikeController extends Controller
 {
+    public function firstcheck($post) {
+     $like = Like::where('posts_id',$post)->first();
+     return $like->like;
+    }
+
     public function check($post) {
      $like = Like::where('posts_id',$post)->first();
      if($like->like == 1) {

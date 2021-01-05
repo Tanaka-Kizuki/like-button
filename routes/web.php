@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/posts/{post?}/check', 'LikeController@check')->name('like.check');
+Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like.firstcheck');
 Route::resource('posts.likes', 'LikeController', [
      'only' => ['store'],
 ]);
