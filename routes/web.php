@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','PostController@index');
+Route::get('/home','PostController@home');
+Route::post('/add','PostController@create');
+
 Route::get('/posts/{post?}/check', 'LikeController@check')->name('like.check');
 Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like.firstcheck');
 Route::resource('posts.likes', 'LikeController', [
      'only' => ['store'],
 ]);
-Route::get('/','PostController@index');
-Route::post('/add','PostController@create');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

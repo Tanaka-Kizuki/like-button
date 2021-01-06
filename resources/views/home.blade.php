@@ -9,7 +9,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="apps">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -69,6 +69,7 @@
     <form action="/add" method="post">
     @csrf
         <input type="text" name="memo">
+        <input type="hidden" name="user_id" value="{{$user->id}}">
         <input type="submit" value="Add">
     </form>
     <div class="content" id="app">
