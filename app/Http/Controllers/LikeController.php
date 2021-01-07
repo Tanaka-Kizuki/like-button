@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Like;
+use Auth;
 
 class LikeController extends Controller
 {
     public function firstcheck($post) {
-     $like = Like::where('posts_id',$post)->first();
+     $likes = new Like();
+     $like = $likes->where('posts_id',$post)->first();
      return $like->like;
     }
 
