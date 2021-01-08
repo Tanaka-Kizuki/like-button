@@ -26,6 +26,7 @@ export default {
          console.log(res)
          this.status = true
        } else {
+         console.log(res)
          this.status = false
        }
      }).catch(function(err) {

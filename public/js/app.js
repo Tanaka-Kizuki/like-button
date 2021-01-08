@@ -1970,6 +1970,7 @@ __webpack_require__.r(__webpack_exports__);
           console.log(res);
           _this.status = true;
         } else {
+          console.log(res);
           _this.status = false;
         }
       })["catch"](function (err) {
