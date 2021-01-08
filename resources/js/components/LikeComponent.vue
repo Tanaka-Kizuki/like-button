@@ -23,6 +23,7 @@ export default {
      const path = array.join('')
      axios.get(path).then(res => {
        if(res.data == 1) {
+         console.log(res)
          this.status = true
        } else {
          this.status = false

@@ -10,9 +10,19 @@ use Auth;
 class LikeController extends Controller
 {
     public function firstcheck($post) {
+     $user = Auth::user();
      $likes = new Like();
      $like = $likes->where('posts_id',$post)->first();
-     return $like->like;
+     if($like->where('user_id',$user->id)->first()) {
+          return $like->like;
+     } else {
+          $like->create([
+               'user_id' => $user->id,
+               'posts_id' => $post,
+               'like' => 0
+          ]);
+          return $like->like;
+     }
     }
 
     public function check($post) {

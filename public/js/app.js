@@ -1967,6 +1967,7 @@ __webpack_require__.r(__webpack_exports__);
       var path = array.join('');
       axios.get(path).then(function (res) {
         if (res.data == 1) {
+          console.log(res);
           _this.status = true;
         } else {
           _this.status = false;
