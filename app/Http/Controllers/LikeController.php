@@ -14,29 +14,33 @@ class LikeController extends Controller
      $likes = new Like();
      $like = Like::where('posts_id',$post)->where('user_id',$user->id)->first();
      if($like) {
-          return [$like->like,3];
+          $count = $likes->where('posts_id',$post)->where('like',1)->count();
+          return [$like->like,$count];
      } else {
           $like = $likes->create([
                'user_id' => $user->id,
                'posts_id' => $post,
                'like' => 0
           ]);
-
-          return $like->like;
+          $count = $likes->where('posts_id',$post)->where('like',1)->count();
+          return [$like->like,$count];
      }
     }
 
     public function check($post) {
      $user = Auth::user();
+     $likes = new Like();
      $like = Like::where('posts_id',$post)->where('user_id',$user->id)->first();
      if($like->like == 1) {
           $like->like = 0;
           $like->save();
-          return $like->like;
+          $count = $likes->where('posts_id',$post)->where('like',1)->count();
+          return [$like->like,$count];
      } else {
           $like->like = 1;
           $like->save();
-          return $like->like;
+          $count = $likes->where('posts_id',$post)->where('like',1)->count();
+          return [$like->like,$count];
      };
     }
 }
