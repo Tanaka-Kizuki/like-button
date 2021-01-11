@@ -14,7 +14,7 @@ class LikeController extends Controller
      $likes = new Like();
      $like = Like::where('posts_id',$post)->where('user_id',$user->id)->first();
      if($like) {
-          return $like->like;
+          return [$like->like,3];
      } else {
           $like = $likes->create([
                'user_id' => $user->id,

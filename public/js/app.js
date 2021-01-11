@@ -1966,7 +1966,7 @@ __webpack_require__.r(__webpack_exports__);
       var array = ["/posts/", id, "/firstcheck"];
       var path = array.join('');
       axios.get(path).then(function (res) {
-        if (res.data == 1) {
+        if (res.data[0] == 1) {
           console.log(res);
           _this.status = true;
         } else {
@@ -1984,7 +1984,7 @@ __webpack_require__.r(__webpack_exports__);
       var array = ["/posts/", id, "/check"];
       var path = array.join('');
       axios.get(path).then(function (res) {
-        if (res.data == 1) {
+        if (res.data[0] == 1) {
           _this2.status = true;
         } else {
           _this2.status = false;

@@ -22,7 +22,7 @@ export default {
      const array = ["/posts/",id,"/firstcheck"];
      const path = array.join('')
      axios.get(path).then(res => {
-       if(res.data == 1) {
+       if(res.data[0] == 1) {
          console.log(res)
          this.status = true
        } else {
@@ -38,7 +38,7 @@ export default {
      const array = ["/posts/",id,"/check"];
      const path = array.join('')
      axios.get(path).then(res => {
-       if(res.data == 1) {
+       if(res.data[0] == 1) {
          this.status = true
        } else {
          this.status = false
