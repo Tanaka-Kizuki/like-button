@@ -37664,7 +37664,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Like")]
+          [_vm._v("♡")]
         )
       : _vm._e(),
     _vm.status == false
@@ -37681,7 +37681,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Liked")]
+          [_vm._v("♥")]
         ),
     _vm.status == true
       ? _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
